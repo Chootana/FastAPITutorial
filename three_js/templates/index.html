@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Simple toDo Application</title>
+    <script src="{{ url_for('static', path='/js/three.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/OrbitControls.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/BVHLoader.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/test.js') }}"></script>
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: column; min-height: 80vh">
+        <div class="container">
+            {% block content %}
+            <!-- メインコンテンツ -->
+            <canvas id="myCanvas"></canvas>
+            <script>
+                const bvh_motion_path = "{{ url_for('db', path='/01_01.bvh') }}";
+            </script>
+
+            <script>Run(bvh_motion_path)</script>
+            Hoge 
+
+            <script>Run(bvh_motion_path)</script>
+
+            {% endblock %}
+        </div>
+    </div>
+    <br>
+    <hr>
+    <footer>
+        <div align="center">
+            <p>Copyright &copy; RightCode Inc. All right reserves.</p>
+            <p>Powered by FastAPI 0.36.0 &amp; starlette 0.12.9</p>
+        </div>
+    </footer>
+</body>
+
+</html>

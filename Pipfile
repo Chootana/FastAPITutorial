@@ -11,6 +11,8 @@ uvicorn = {extras = ["standard"], version = "*"}
 pydantic = "*"
 databases = "*"
 sqlalchemy = "*"
+aiofiles = "*"
+jinja2 = "*"
 
 [requires]
 python_version = "3.8.5"
